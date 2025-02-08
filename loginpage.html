@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Background with Transparent Box</title>
+   
+    <link rel="stylesheet" href="loginpage.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="video-background">
+        <video autoplay muted loop id="myVideo">
+            <source src="sololeveling2.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="content">
+        <div class="transparent-box">
+            <h2>BEGIN YOUR JOURNEY WITH ARISE</h2>
+            <form id="userForm">
+                <label for="name">Username:</label>
+                <input type="text" id="name" name="name" required>
+            
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            
+                <label for="Age">Age:</label>
+                <input type="number" id="Age" name="Age" required>
+            
+                <label for="pass">Create Password:</label>
+                <input type="password" id="pass" name="pass" required>
+            
+                <label for="confirm-pass">Confirm Password:</label>
+                <input type="password" id="confirm-pass" name="confirm-pass" required>
+            
+                <label for="country">Country:</label>
+                <select id="country" name="country" required>
+                    <option value="India">India</option>
+                    <option value="United States">United States</option>
+                    <option value="Canada">Canada</option>
+                </select>
+            
+                <button type="submit">Submit</button>
+            </form>
+            
+            
+        </div>
+    </div>
+    <script src="loginpage.js"></script>
+</body>
+</html>

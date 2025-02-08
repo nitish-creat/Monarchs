@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Orbitron', sans-serif;
+}
+
+#bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#arise-text {
+    font-size: 6rem;
+    color: white;
+    text-shadow: 0 0 20px rgba(183, 19, 220, 0.8);
+    opacity: 0;
+}
+
+.buttons-container {
+    position: absolute;
+    bottom: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    opacity: 0;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #f595e897;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color:#f595e897;
+    transform: scale(1.1);
+}

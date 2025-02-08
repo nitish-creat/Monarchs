@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARISE - Gaming Platform</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+   
+    <video autoplay muted loop playsinline id="bg-video">
+        <source src="main.mp4" type="video/mp4">
+   
+    </video>
+
+    <header class="transparent-header">
+       
+        <div class="logo">
+            <img src="logo2-removebg.png" alt="ARISE Logo">
+        </div>
+
+        <div class="user-info">
+            <img id="profile-pic" src="" alt="Profile Picture">
+            <div class="user-details">
+                <span id="username"></span>
+                <span id="email"></span>
+                <span id="age"></span>
+            </div>
+            <div class="country">
+                <span id="country"></span>
+                <img id="flag" src="" alt="Country Flag">
+            </div>
+            
+        </div>
+    </header>
+
+    <div class="container-wrapper">
+        <div class="boxes">
+        <div class="category-container">
+            <h2>Students</h2>
+            <button class="go-btn" onclick="window.location.href='student.html';">Go</button>
+        </div>
+        <div class="category-container">
+            <h2>Professionals</h2>
+            <button class="go-btn" onclick="window.location.href='job.html';">Go</button>
+        </div>
+    </div>
+    <div class="boxes">
+        <div class="category-container">
+            <h2>Sports</h2>
+            <button class="go-btn" onclick="window.location.href='sports.html';">Go</button>
+        </div>
+        <div class="category-container">
+            <h2>Entrepreneurs</h2>
+            <button class="go-btn" onclick="window.location.href='enter.html';">Go</button>
+        </div>
+    </div>
+</div>
+
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solo Leveling System UI</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+        body {
+            background-color: #050A13;
+            color: #00d9ff;
+            font-family: 'Orbitron', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            position: relative;
+        }
+        .system-box {
+            background: rgba(0, 0, 0, 0.85);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px #00d9ff;
+            text-align: center;
+            width: 50%;
+            max-width: 600px;
+            position: relative;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: scale(0.9); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        .title {
+            font-size: 2em;
+            text-shadow: 0 0 20px #00d9ff;
+            animation: pulse 1.5s infinite alternate;
+        }
+        @keyframes pulse {
+            0% { text-shadow: 0 0 10px #00d9ff; }
+            100% { text-shadow: 0 0 30px #00d9ff; }
+        }
+        .task-box {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(0, 10, 20, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 0 10px #00d9ff;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            font-size: 1.2em;
+            padding: 10px;
+            border-bottom: 1px solid #00d9ff;
+            transition: 0.3s;
+            cursor: pointer;
+            position: relative;
+        }
+        li:last-child {
+            border-bottom: none;
+        }
+        li:hover {
+            color: #ffcc00;
+            text-shadow: 0 0 10px #ffcc00;
+        }
+        .xp-counter {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.5em;
+            color: #ffcc00;
+        }
+        .typing-test {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(0, 10, 20, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 0 10px #00d9ff;
+        }
+    </style>
+    <script>
+        let xp = 0;
+        function completeTask(element, task) {
+            if (task.includes("Push-ups")) {
+                let videoProof = prompt("Upload your video proof link:");
+                if (!videoProof) return alert("Proof is required to complete this task.");
+            } else if (task.includes("Quiz")) {
+                window.location.href = "https://example.com/quiz";
+                return;
+            } else if (task.includes("Typing")) {
+                document.getElementById("typing-test").style.display = "block";
+                return;
+            }
+            element.classList.add("completed");
+            setTimeout(() => { element.remove(); }, 1500);
+            xp += 10;
+            document.getElementById("xp-count").innerText = `XP: ${xp}`;
+            checkLevelUp();
+        }
+        function checkLevelUp() {
+            if (xp >= 40) {
+                document.getElementById("rank").innerText = "You have leveled up to D-Rank!";
+                document.getElementById("rank").style.color = "#ffcc00";
+                document.getElementById("rank").style.textShadow = "0 0 20px #ffcc00";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="xp-counter" id="xp-count">XP: 0</div>
+    <div class="system-box">
+        <h1 class="title">[SYSTEM MESSAGE]</h1>
+        <p id="rank">You are currently an E-Rank</p>
+        <div class="task-box">
+            <h2>Complete These Tasks to Level Up:</h2>
+            <ul>
+                <li onclick="completeTask(this, 'Read 10 Pages of a Book')">Solve 5 general knowledge or math questions📖</li>
+                <li onclick="completeTask(this, 'Do 100 Push-ups')">Hold a 2-minute plank for endurance💪</li>
+                <li onclick="completeTask(this, 'Practice Typing for 15 Minutes')">Type a given paragraph in 60 seconds without errors⌨️</li>
+                <li onclick="completeTask(this, 'Take a Knowledge Quiz')">Pick a random topic & explain it in 60 seconds🧠</li>
+            </ul>
+        </div>
+        <div class="typing-test" id="typing-test">
+            <h2>Type the following paragraph:</h2>
+            <p>"The path to strength is filled with challenges. Only those who persevere can rise above and claim their true power."</p>
+            <textarea id="typing-input" rows="4" cols="50"></textarea>
+            <button onclick="checkTyping()">Submit</button>
+        </div>
+    </div>
+</body>
+</html>

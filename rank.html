@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solo Leveling Rank Up</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+        body {
+            background-color: #0a0a0a;
+            color: #00d9ff;
+            font-family: 'Orbitron', sans-serif;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+        .rank {
+            font-size: 3em;
+            text-shadow: 0 0 20px #00d9ff;
+            animation: glow 1.5s infinite alternate;
+        }
+        @keyframes glow {
+            0% { text-shadow: 0 0 10px #00d9ff, 0 0 20px #00d9ff; }
+            100% { text-shadow: 0 0 30px #00d9ff, 0 0 50px #00d9ff; }
+        }
+        .task-box {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px #00d9ff;
+            width: 60%;
+            max-width: 500px;
+            margin-top: 20px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            font-size: 1.5em;
+            padding: 10px;
+            border-bottom: 1px solid #00d9ff;
+            transition: 0.3s;
+        }
+        li:last-child {
+            border-bottom: none;
+        }
+        li:hover {
+            color: #ffcc00;
+            text-shadow: 0 0 10px #ffcc00;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="rank">YOU ARE CURRENTLY AN E-RANK</h1>
+    <div class="task-box">
+        <h2>Complete These Tasks to Level Up:</h2>
+        <ul>
+            <li>Read 10 Pages of a Book 📖</li>
+            <li>Do 20 Push-ups 💪</li>
+            <li>Practice Typing for 15 Minutes ⌨️</li>
+            <li>Take a Knowledge Quiz 🧠</li>
+        </ul>
+    </div>
+</body>
+</html>
